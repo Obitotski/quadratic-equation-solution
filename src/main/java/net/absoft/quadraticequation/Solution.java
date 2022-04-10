@@ -9,14 +9,14 @@ public class Solution {
         double discriminant;
         discriminant = Math.pow(b, 2) - (4 * a * c); //The formula for determining the discriminant
         if (discriminant > 0)
-            solution = discriminantIsMoreThanZero(discriminant, a, b, c); //If the discriminant is more than zero
+            solution = discriminantIsMoreThanZero(discriminant, a, b); //If the discriminant is more than zero
         else if (discriminant == 0)
-            solution = discriminantIsEqualToZero(discriminant, a, b, c); //If the discriminant is equal to zero
+            solution = discriminantIsEqualToZero(a, b); //If the discriminant is equal to zero
         else solution = null; //If the discriminant is less than zero
         return solution;
     }
 
-    private Solution discriminantIsMoreThanZero(double d, double a, double b, double c) {
+    private Solution discriminantIsMoreThanZero(double d, double a, double b) {
         Solution solution = new Solution();
         double x1;
         double x2;
@@ -27,12 +27,12 @@ public class Solution {
         return solution;
     }
 
-    private Solution discriminantIsEqualToZero(double d, double a, double b, double c) {
+    private Solution discriminantIsEqualToZero(double a, double b) {
         Solution solution = new Solution();
         double x;
-        x = -b / (2 + a);
-        solution.setX1(x1);
-        solution.setX2(x2);
+        x = -b / (2 * a);
+        solution.setX1(x);
+        solution.setX2(x);
         return solution;
     }
 
