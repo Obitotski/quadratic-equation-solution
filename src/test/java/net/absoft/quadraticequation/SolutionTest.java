@@ -20,14 +20,5 @@ public class SolutionTest {
         Assert.assertEquals(solution.getX2(), -1, "The x2 root of the quadratic equation is incorrect");
     }
 
-    /*
 
-    In case, the discriminant is equal to zero, we`ll have this option
-    @Test
-    public void testQuadraticEquationSolutionWhenDiscriminantIsEqualToZero() {
-        Solution solution = new Solution();
-        Assert.assertEquals(solution.solutionOfQuadraticEquation(3, -4, 2), "Solution is not null when discriminant is less than zero");
-    }
-
-     */
 }
