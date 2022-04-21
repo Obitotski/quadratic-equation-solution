@@ -23,9 +23,13 @@ public class Solution {
 
 class QuadraticEquationSolver {
 
-    public static Solution solveQuadraticEquation(double a, double b, double c) {
+    public static Solution solveQuadraticEquation(double a, double b, double c) throws IllegalArgumentException {
 
-        double discriminant = calculateDiscriminant(a,b,c); //The formula for determining the discriminant
+        if (a == 0) {
+            throw new IllegalArgumentException("First argument can not be 0");
+        }
+
+        double discriminant = calculateDiscriminant(a, b, c); //The formula for determining the discriminant
         if (discriminant > 0)
             return calculateRootsWhenDiscriminantIsMoreThanZero(discriminant, a, b); //If the discriminant is more than zero
         else if (discriminant == 0)
@@ -34,7 +38,7 @@ class QuadraticEquationSolver {
         return null; //If the discriminant is less than zero
     }
 
-    private static double calculateDiscriminant(double a, double b, double c){
+    private static double calculateDiscriminant(double a, double b, double c) {
         return Math.pow(b, 2) - (4 * a * c);
     }
 
